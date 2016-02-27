@@ -3,7 +3,6 @@
 #include "insertion.h"
 #include "shellsort.h"
 #include <string>
-#include <iostream>
 
 using namespace std;
 
