@@ -6,12 +6,8 @@ template <typename T>
 void insertionSort(T a[], int n)
 {
     for(int i = 0; i < n; i++){
-        for(int j = i;j>0;j--){
-            if(a[j]<a[j-1]){
-                exch(a,j,j-1);
-            }else{
-                break;
-            }
+        for(int j = i;j>0 && a[j]< a[j-1];j--){
+            exch(a,j,j-1);
         }
     }
 }
