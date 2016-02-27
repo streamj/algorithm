@@ -7,7 +7,7 @@ void insertionSort(T a[], int n)
 {
     for(int i = 0; i < n; i++){
         for(int j = i;j>0;j--){
-            if(lessthan(a[j],a[j-1])){
+            if(a[j]<a[j-1]){
                 exch(a,j,j-1);
             }else{
                 break;

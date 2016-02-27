@@ -1,12 +1,6 @@
 #ifndef SORTSUPPORT_H
 #define SORTSUPPORT_H
 #include <iostream>
-template<typename T>
-bool lessthan(const T& a, const T& b)
-{
-    if(a<b) return true;
-    return false;
-}
 
 template <typename T>
 void exch(T a[], int i, int j)
