@@ -28,4 +28,13 @@ bool isSorted(T a[], int n)
 	return true;
 }
 
+// for merge sort
+template <typename T>
+bool isSorted(T a[], int lo, int hi)
+{
+	for (int i = lo + 1; i <= hi; i++){
+		if (a[i] < a[i - 1]){ return false; }
+	}
+	return true;
+}
 #endif

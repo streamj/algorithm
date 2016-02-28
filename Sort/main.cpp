@@ -2,6 +2,7 @@
 #include "selection.h"
 #include "insertion.h"
 #include "shellsort.h"
+#include "mergesort.h"
 #include <string>
 
 using namespace std;
@@ -14,6 +15,8 @@ int main(int argc, char** argv)
         "swift", "abandon", "boku","gahara"};
     int aa[25] = { 9, 3, 6, 7, 8, 2, 22, 11, 4, 23, 0, 13, 25, 35,
         87, 31, 29, 82, 88, 95, 101, 293, 100, 58, 65 };    
+    int bb[25] = { 7, 34, 4, 6, 77, 33, 95, 87, 30, 27, 797, 433,
+        235, 18, 101, 15, 3, 1, 0, 73, 95, 11, 2, 71, 60};
     show(a,8);
     selectionSort(a,8);
     show(a,8);
@@ -35,6 +38,11 @@ int main(int argc, char** argv)
     show(aa,25);
     shellSort(aa,25);
     show(aa,25);
+    
+    cout << endl;
+    show(bb,25);
+    mergeSort(bb,25);
+    show(bb,25);
 
     return 0;
 }
