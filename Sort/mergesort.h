@@ -40,6 +40,7 @@ void inner_sort(T a[], T aux[], int lo, int hi)
 	merge(a, aux, lo, mid, hi);
 }
 
+// top down merge sort
 template <typename T>
 void mergeSort(T a[], int n)
 {	// create a aux array here, avoid recursive create
