@@ -72,6 +72,7 @@ void mergeSortM(T a[], int n){
         aux[i] = a[i];
     }
     innerSortM(a,aux,0,n-1);
+    delete [] aux;
 }
 #endif
 
