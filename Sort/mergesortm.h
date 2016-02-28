@@ -50,9 +50,10 @@ void innerSortM(T a[], T aux[],int lo, int hi)
     }
 
     int mid = lo + (hi - lo) /2 ;
-
-    innerSortM(aux, a, lo, mid);
-    innerSortM(aux, a, mid+1, hi);
+    // eliminate copy to the auxiliary array by switching the role of
+    // input and auxiliary array each recursive call like 1,2,3
+    innerSortM(aux, a, lo, mid);   // here 1
+    innerSortM(aux, a, mid+1, hi); // here 2
     // check if alread sorted, then no need merge
     if(aux[mid] <= aux[mid+1]){
         for(int i = lo; i <= hi; i++){
@@ -61,7 +62,7 @@ void innerSortM(T a[], T aux[],int lo, int hi)
         return;
     }
 
-    mergeM(a,aux,lo,mid,hi);
+    mergeM(a,aux,lo,mid,hi);       // here 3
 }
 template <typename T>
 void mergeSortM(T a[], int n){
