@@ -5,9 +5,8 @@
 #include "mergesort.h"
 #include "mergesortm.h"
 #include "mergesortbu.h"
+#include "quicksort.h"
 #include <string>
-#include <time.h>
-#include <stdlib.h>
 using namespace std;
 
 template <typename T>
@@ -40,6 +39,12 @@ int main(int argc, char** argv)
     for(int i = 0; i < 50; i++){
         dd[i] = rand() % 100;
     }
+
+    int* ee = new int[50];
+    srand((unsigned)time(NULL));
+    for(int i = 0; i < 50;i++){
+        ee[i] = rand() % 100;
+    }
     cout << "Testing...";
     test(a,8,selectionSort);
     test(b,8,insertionSort);            
@@ -48,7 +53,8 @@ int main(int argc, char** argv)
     test(bb,25,mergeSort); 
     test(cc,50,mergeSortM);
     test(dd,50,mergeSortBU);
-    
+    test(ee,50,quickSort);
     delete [] dd;
+    delete [] ee;
     return 0;
 }
