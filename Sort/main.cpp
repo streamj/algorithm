@@ -8,8 +8,17 @@
 #include <string>
 #include <time.h>
 #include <stdlib.h>
-
 using namespace std;
+
+template <typename T>
+void test(T a[],int n, void(*sort)(T a[],int n))
+{
+    cout << endl;
+    show(a,n);
+    sort(a,n);
+    assert(isSorted(a,n));
+    show(a,n);
+}
 
 int main(int argc, char** argv)
 {
@@ -31,49 +40,14 @@ int main(int argc, char** argv)
     for(int i = 0; i < 50; i++){
         dd[i] = rand() % 100;
     }
-    show(a,8);
-    selectionSort(a,8);
-    assert(isSorted(a,8));
-    show(a,8);
-
-    cout << endl;
-
-    show(b,8);
-    insertionSort(b,8);
-    assert(isSorted(b,8));
-    show(b,8);
-
-    cout << endl;
-
-    show(c,9);
-    insertionSortM(c,9);
-    assert(isSorted(c,9));
-    show(c,9);
-
-    cout << endl;
-
-    show(aa,25);
-    shellSort(aa,25);
-    assert(isSorted(aa,25));
-    show(aa,25);
-    
-    cout << endl;
-    show(bb,25);
-    mergeSort(bb,25);
-    assert(isSorted(bb,25));
-    show(bb,25);
-
-    cout << endl;
-    show(cc,50);
-    mergeSortM(cc,50);
-    assert(isSorted(cc,50));
-    show(cc,50);
-
-    cout << endl;
-    show(dd,50);
-    mergeSortBU(dd,50);
-    assert(isSorted(dd,50));
-    show(dd,50);
+    cout << "Testing...";
+    test(a,8,selectionSort);
+    test(b,8,insertionSort);            
+    test(c,9,insertionSortM);
+    test(aa,25,shellSort);
+    test(bb,25,mergeSort); 
+    test(cc,50,mergeSortM);
+    test(dd,50,mergeSortBU);
     
     delete [] dd;
     return 0;
