@@ -24,5 +24,6 @@ void mergeSortBU(T a[], int n)
             iMerge(a,aux,lo, lo+sz-1, lo+sz+sz-1<n-1?lo+sz+sz-1:n-1);
         }
     }
+    delete [] aux;
 }
 #endif
