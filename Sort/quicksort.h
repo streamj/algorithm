@@ -40,6 +40,7 @@ template <typename T>
 void quickSort(T a[], int n)
 {
     // shuffle
+    std::srand((unsigned)time(NULL));
     std::random_shuffle(&a[0],&a[n-1]);
     iSort(a,0,n-1);
 }
