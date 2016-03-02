@@ -1,4 +1,3 @@
-#include "sortsupport.h"
 #include "selection.h"
 #include "insertion.h"
 #include "shellsort.h"
@@ -7,6 +6,7 @@
 #include "mergesortbu.h"
 #include "quicksort.h"
 #include "quicksort3way.h"
+#include "heapsort.h"
 #include <string>
 using namespace std;
 
@@ -71,5 +71,12 @@ int main(int argc, char** argv)
     delete [] dd;
     delete [] ee;
     delete [] ff;
+
+    int gg[11]= { 83,79,82,84,69,88,65,77,80,76,69};
+    string hh[11] = { "S","O","R","T","E","X","A","M","P","L","E"};
+
+    test(gg,11,heapSort);
+    test(hh,11,heapSort);
+
     return 0;
 }
